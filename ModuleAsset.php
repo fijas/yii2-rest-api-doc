@@ -13,24 +13,8 @@ class ModuleAsset extends \yii\web\AssetBundle
     /**
      * @inheritdoc
      */
-    public $css = [
-        'jsonview/jquery.jsonview.min.css',
-        'doc.css',
-    ];
-
-    /**
-     * @inheritdoc
-     */
     public $js = [
-        'jsonview/jquery.jsonview.min.js',
         'doc.js',
-    ];
-
-    /**
-     * @inheritdoc
-     */
-    public $depends = [
-        'yii\bootstrap\BootstrapPluginAsset',
     ];
 
 }
