@@ -1,6 +1,6 @@
 <?php
 
-namespace nostop8\yii2\rest_api_doc\controllers;
+namespace fijas\yii2\rest_api_doc\controllers;
 
 use yii\helpers\BaseInflector;
 use yii\helpers\Inflector;
@@ -11,7 +11,7 @@ class DefaultController extends \yii\base\Controller
     public function init()
     {
         $view = $this->getView();
-        \nostop8\yii2\rest_api_doc\ModuleAsset::register($view);
+        \fijas\yii2\rest_api_doc\ModuleAsset::register($view);
         parent::init();
     }
 
@@ -23,7 +23,8 @@ class DefaultController extends \yii\base\Controller
                 $entity = [];
                 $urlName = key($urlRule->controller);
                 $controllerName = current($urlRule->controller);
-                $entity['title'] = ucfirst($controllerName);
+                $entity['title'] = strtolower($controllerName);
+                $entity['id'] = strtolower(str_replace("/", "-", $controllerName));
                 $urlRuleReflection = new \ReflectionClass($urlRule);
                 $rulesObject = $urlRuleReflection->getProperty('rules');
                 $rulesObject->setAccessible(true);
@@ -63,6 +64,7 @@ class DefaultController extends \yii\base\Controller
                         'key' => $key,
                         'name' => $name,
                         'title' => $name == 'id' ? 'ID' : ucfirst(str_replace('_', ' ', $name)),
+                        'id' => $name == 'id' ? 'ID' : ucfirst(str_replace('_', ' ', $name)),
                     ];
                 }
             }
