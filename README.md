@@ -1,5 +1,6 @@
 # yii2-rest-api-doc
 Simple documentation generator for Yii2 REST applications based on defined API endpoints and actions annotations.
+Forked from nostop8/yii2-rest-api-doc.
 
 ## Installation
  - Run `composer require fijas/rest-api-doc`;

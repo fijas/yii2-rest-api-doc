@@ -7,14 +7,6 @@ use yii\helpers\Inflector;
 
 class DefaultController extends \yii\base\Controller
 {
-
-    public function init()
-    {
-        $view = $this->getView();
-        \fijas\yii2\rest_api_doc\ModuleAsset::register($view);
-        parent::init();
-    }
-
     public function actionIndex()
     {
         $rules = [];
@@ -35,7 +27,7 @@ class DefaultController extends \yii\base\Controller
                 $rules[] = $entity;
             }
         }
-        return $this->render('index', [
+        return $this->renderPartial('index', [
                 'rules' => $rules,
         ]);
     }
