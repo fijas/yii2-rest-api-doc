@@ -9,6 +9,8 @@ class DefaultController extends \yii\base\Controller
 {
     public function actionIndex()
     {
+        $this->layout = $this->module->layout;
+        $title = $this->module->title;
         $rules = [];
         foreach (\Yii::$app->urlManager->rules as $urlRule) {
             if ($urlRule instanceof \yii\rest\UrlRule) {
@@ -27,8 +29,9 @@ class DefaultController extends \yii\base\Controller
                 $rules[] = $entity;
             }
         }
-        return $this->renderPartial('index', [
-                'rules' => $rules,
+        return $this->render('index', [
+            'rules' => $rules,
+            'title' => $title
         ]);
     }
 

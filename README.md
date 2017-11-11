@@ -1,6 +1,6 @@
 # yii2-rest-api-doc
 Simple documentation generator for Yii2 REST applications based on defined API endpoints and actions annotations.
-Forked from nostop8/yii2-rest-api-doc.
+Forked from the excellent [nostop8/yii2-rest-api-doc](https://github.com/nostop8/yii2-rest-api-doc).
 
 ## Installation
  - Run `composer require fijas/rest-api-doc`;
@@ -10,7 +10,12 @@ Alternatively add into `require` section of your `composer.json` following strin
 ```
 'modules' => [
   ...
-  'documentation' => 'fijas\yii2\rest_api_doc\Module',
+  'documentation' => [
+    'class' => fijas\yii2\rest_api_doc\Module',
+    //options (not required):
+    'layout' => 'default',
+    'title' => 'REST API Documentation
+  ]
   ...
 ],
 ```
@@ -38,6 +43,8 @@ Please, note. You may change `documentation` into any other word, which would be
 4. Rest Expand: ['expandRelation1', 'expandRelation2'].
 
 - In case you are using CRUD services, which does not require endpoints to be defined (because they are already predefined inside `yii\rest\UrlRule` - http://www.yiiframework.com/doc-2.0/yii-rest-urlrule.html and implemented inside `\yii\rest\ActiveController`) and you still want to add some description, define in your controller empty methods with the same names (e.g. actionCreate, actionUpdate etc.) and add annotations to them as you would do for other actions implemented by you.
+
+- The documentation is rendered inside a default layout which can be altered to your liking by specifying the `layout` module option. 
 
 ## Example of annotations
 

@@ -4,7 +4,6 @@
     "description": "Simple documentation generator for Yii2 REST applications based on defined API endpoints and actions annotations.",
     "keywords": ["yii2", "rest", "api", "generator", "documentation", "docs"],
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Volodymyr Dovbenko",
@@ -16,8 +15,7 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*",
-        "bower-asset/jquery": ">=1.11.1"
+        "yiisoft/yii2": "*"
     },
     "autoload": {
         "psr-4": {

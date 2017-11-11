@@ -7,6 +7,9 @@ class Module extends \yii\base\Module implements \yii\base\BootstrapInterface
 
     public $controllerNamespace = 'fijas\yii2\rest_api_doc\controllers';
 
+    public $layout = "default";
+    public $title = "REST API Documentation";
+
     public function bootstrap($app)
     {
         $app->getUrlManager()->addRules([
